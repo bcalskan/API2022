@@ -1,3 +1,6 @@
+package get_requests;
+
+import base_Urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -5,7 +8,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class Get03 extends BaseUrls {
+public class Get03 extends JsonPlaceHolderBaseUrl {
 
      /*
         Given
@@ -52,6 +55,22 @@ public class Get03 extends BaseUrls {
                 body("title",equalTo("et itaque necessitatibus maxime molestiae qui quas velit"),
                         "completed", equalTo(false),
                         "userId", equalTo(2));
+
+        /*
+        Not1:
+        Assertion yaparken Java calismayi durdurdugunda hata sonrasi kodlar calismaz.
+        Böylece hata sonrasi assertionlar hakkinda bilgi sahibi olunamaz.
+        Fakat hata öncesi assertionlar gecmistir
+
+        Not2:
+        Eger kodumuzu hata noktasinda duracak sekilde yazarsak "Hard Assertion" yapimis oluruz
+
+        Not3:
+        Eger kodumuzu hata noktasinda durmayacak sekilde yazarsak "Soft Assertion" yapmis oluruz
+
+         Eger coklu body() method icinde assert yaparsak "Hard Assert",
+         tek body() methodu icinde assert yaparsak "Soft Assert" yapmis oluruz.
+         */
 
     }
 
