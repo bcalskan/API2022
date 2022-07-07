@@ -1,15 +1,15 @@
-package get_requests;
+package deneme;
 
 import base_Urls.HerOkuAppBaseUrl;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertTrue;
 
-public class Get05 extends HerOkuAppBaseUrl {
-
-     /*
+public class G5 extends HerOkuAppBaseUrl {
+    /*
         Given
             https://restful-booker.herokuapp.com/booking
         When
@@ -21,26 +21,13 @@ public class Get05 extends HerOkuAppBaseUrl {
      */
 
     @Test
-    public void get01(){
-
-        //1. Step: Set the Url
-
-        //https://restful-booker.herokuapp.com/booking?firstname=Aaron&lastname=Chen
-        spec.pathParam("first","booking").
+    public void get01() {
+        spec.pathParams("first", "booking").
                 queryParams("firstname", "Aaron",
                         "lastname", "Chen");
-
-        //2. Step: Set the expected data
-
-        //3. Step: Send the request and get the response
-
         Response response = given().spec(spec).when().get("/{first}");
         response.prettyPrint();
-
-        //4. Step: Do Assertion
         response.then().assertThat().statusCode(200);
-        assertTrue(response.asString().contains("bookingid"));
-
+        assertTrue(response.asString().contains(" "));
     }
-
 }

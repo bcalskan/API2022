@@ -23,7 +23,7 @@ public class Get01 {
                     i) Set the url
                     ii) Set the expected data (POST-PUT-PATCH)
                     iii) Type code to send request
-                    iv ) Do Assertion
+                    iv) Do Assertion
      */
 
     /*
@@ -49,7 +49,7 @@ public class Get01 {
         //  iii) Type code to send request
         Response response = given().when().get(url);
         //System.out.println(response); --> referans kodu verir
-        //response.prettyPrint(); --> düzgün yazdirir
+        //response.prettyPrint(); //--> düzgün yazdirir
 
         //  iv ) Do Assertion
         response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
