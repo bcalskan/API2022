@@ -24,16 +24,19 @@ public class Get06 extends HerOkuAppBaseUrl {
         And
             Response body should be like;
 
-            {
-    "firstname": "GGS",
-    "lastname": "FINCH",
-    "totalprice": 111,
-    "depositpaid": true,
+        {
+    "firstname": "Norah",
+    "lastname": "Girard",
+    "totalprice": 509,
+    "depositpaid": false,
     "bookingdates": {
-        "checkin": "2018-01-01",
-        "checkout": "2019-01-01"
-    }
+        "checkin": "2022-07-08",
+        "checkout": "2022-07-13"
+    },
+    "additionalneeds": "Newspaper"
 }
+
+
      */
 
     @Test
@@ -51,12 +54,12 @@ public class Get06 extends HerOkuAppBaseUrl {
         //1. Yol
         response.then().
                 assertThat().statusCode(200).
-                contentType("application/json").body("firstname", equalTo("GGS"),
-                        "lastname", equalTo("FINCH"),
-                        "totalprice", equalTo(111),
-                        "depositpaid", equalTo(true),
-                        "bookingdates.checkin", equalTo("2018-01-01"),
-                        "bookingdates.checkout", equalTo("2019-01-01"));
+                contentType("application/json").body("firstname", equalTo("Norah"),
+                        "lastname", equalTo("Girard"),
+                        "totalprice", equalTo(509),
+                        "depositpaid", equalTo(false),
+                        "bookingdates.checkin", equalTo("2022-07-08"),
+                        "bookingdates.checkout", equalTo("2022-07-13"));
 
 
         //2. Yol: JsonPath Class kullanilir
