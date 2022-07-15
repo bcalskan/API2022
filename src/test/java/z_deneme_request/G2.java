@@ -1,4 +1,4 @@
-package deneme;
+package z_deneme_request;
 
 import io.restassured.response.Response;
 import org.junit.Test;

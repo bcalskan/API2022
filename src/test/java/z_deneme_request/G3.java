@@ -1,4 +1,4 @@
-package deneme;
+package z_deneme_request;
 
 import base_Urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
