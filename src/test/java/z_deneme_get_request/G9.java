@@ -1,4 +1,4 @@
-package z_deneme_request;
+package z_deneme_get_request;
 
 import base_Urls.HerOkuAppBaseUrl;
 import io.restassured.response.Response;
