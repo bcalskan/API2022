@@ -16,6 +16,15 @@ public class DenemeJsonPlaceHolderTestData {
         return expectedData;
     }
 
+    public Map<String, Object> expectedDataWithMissingKeys(Integer userId, String title, Boolean completed){
+        Map<String, Object> expectedDataMissingKeysMap = new HashMap<String, Object>();
+        expectedDataMissingKeysMap.put("userId",userId);
+        expectedDataMissingKeysMap.put("title",title);
+        expectedDataMissingKeysMap.put("completed",completed);
+
+        return expectedDataMissingKeysMap;
+    }
+
 
 
     //   {
