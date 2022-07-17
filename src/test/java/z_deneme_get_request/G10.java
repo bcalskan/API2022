@@ -3,7 +3,7 @@ package z_deneme_get_request;
 import base_Urls.GoRestBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-import z_deneme_test_data.denemeGoRestTestData;
+import z_deneme_test_data.DenemeGoRestTestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,7 +39,7 @@ public class G10 extends GoRestBaseUrl {
     public void get01() {
         spec.pathParams("first", "users", "second", 2986);
 
-        denemeGoRestTestData dnm = new denemeGoRestTestData();
+        DenemeGoRestTestData dnm = new DenemeGoRestTestData();
         Map<String, Object> innerExpectedMap = dnm.innerMapWithAllKeys(2986, "Msgr. Lila Mahajan", "msgr_mahajan_lila@ledner-howell.io", "female", "active");
         Map<String, Object> outerExpectedMap = dnm.outerMapWithAllKeys(null,innerExpectedMap);
 

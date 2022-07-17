@@ -1,9 +1,9 @@
-package z_deneme_get_request;
+package get_requests1;
 
 import base_Urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-import z_deneme_test_data.DenemeJsonPlaceHolderTestData;
+import test_data.JsonPlaceHolderTestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,16 @@ import java.util.Map;
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
-public class G8 extends JsonPlaceHolderBaseUrl {
+public class Get08 extends JsonPlaceHolderBaseUrl {
+
+    //De- Serialization: Json formatından Java objesine çevirmektir
+    //Serialization: Java objesini JSON formatına çevirmek
+    //De-Serialization ve Serialization 2 türlü yapılır.
+    //Gson:(Google tarafından üretilmiştir, pek kullanmayacağız)
+    //Object Mapper: Daha popülerdir bunu kullanacağız
+
+
+
     /*
          Given
             https://jsonplaceholder.typicode.com/todos/2
@@ -34,22 +43,24 @@ public class G8 extends JsonPlaceHolderBaseUrl {
 
     @Test
     public void get01() {
+        //1. Step: Set the Url
         spec.pathParams("first", "todos", "second", 2);
-        Response response = given().spec(spec).when().get("/{first}/{second}");
-        Map<String, Object> actualData = response.as(HashMap.class);
-        response.prettyPrint();
 
+        //2. Step: Set the expected data
         Map<String, Object> expectedData = new HashMap<String, Object>();
         expectedData.put("userId", 1);
-        expectedData.put("id", 2);
         expectedData.put("title", "quis ut nam facilis et officia qui");
         expectedData.put("completed", false);
         expectedData.put("StatusCode", 200);
         expectedData.put("Via", "1.1 vegur");
         expectedData.put("Server", "cloudflare");
 
+        //3. Step: Send the request and get the response
+        Response response = given().spec(spec).when().get("/{first}/{second}");
+        Map<String, Object> actualData = response.as(HashMap.class);
+
+        //4. Step: Do Assertion
         assertEquals(expectedData.get("userId"), actualData.get("userId"));
-        assertEquals(expectedData.get("id"), actualData.get("id"));
         assertEquals(expectedData.get("title"), actualData.get("title"));
         assertEquals(expectedData.get("completed"), actualData.get("completed"));
         assertEquals(expectedData.get("StatusCode"), response.getStatusCode());
@@ -59,25 +70,31 @@ public class G8 extends JsonPlaceHolderBaseUrl {
 
     @Test
     public void get02() {
+        //1. Step: Set the Url
         spec.pathParams("first", "todos", "second", 2);
-        Response response = given().spec(spec).when().get("/{first}/{second}");
-        Map<String, Object> actualDataMap = response.as(HashMap.class);
-        response.prettyPrint();
 
-        DenemeJsonPlaceHolderTestData deneme = new DenemeJsonPlaceHolderTestData();
-        Map<String, Object> expectedDataMap = deneme.expectedDataWithAllKeys(1, 2, "quis ut nam facilis et officia qui", false);
+        //2. Step: Set the expected data
+        JsonPlaceHolderTestData expectedData = new JsonPlaceHolderTestData();
+        Map<String, Object> expectedDataMap = expectedData.expectedDataWithAllKeys(1, "quis ut nam facilis et officia qui", false);
+        expectedDataMap.put("StatusCode", 200);
         expectedDataMap.put("Via", "1.1 vegur");
         expectedDataMap.put("Server", "cloudflare");
-        expectedDataMap.put("StatusCode", 200);
 
+        //3. Step: Send the request and get the Response
+        Response response = given().spec(spec).when().get("/{first}/{second}");
 
-        assertEquals(expectedDataMap.get("userId"),actualDataMap.get("userId"));
-        assertEquals(expectedDataMap.get("id"),actualDataMap.get("id"));
-        assertEquals(expectedDataMap.get("title"),actualDataMap.get("title"));
-        assertEquals(expectedDataMap.get("completed"),actualDataMap.get("completed"));
-        assertEquals(expectedDataMap.get("StatusCode"),response.getStatusCode());
-        assertEquals(expectedDataMap.get("Via"),response.getHeader("Via"));
-        assertEquals(expectedDataMap.get("Server"),response.getHeader("Server"));
+        Map<String, Object> actualData = response.as(HashMap.class);
+        System.out.println(actualData);
+
+        //4. Step: Do Assertion
+
+        assertEquals(expectedDataMap.get("userId"), actualData.get("userId"));
+        assertEquals(expectedDataMap.get("title"), actualData.get("title"));
+        assertEquals(expectedDataMap.get("completed"), actualData.get("completed"));
+        assertEquals(expectedDataMap.get("StatusCode"), response.getStatusCode());
+        assertEquals(expectedDataMap.get("Via"), response.getHeader("Via"));
+        assertEquals(expectedDataMap.get("Server"), response.getHeader("Server"));
+
 
     }
 
