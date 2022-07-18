@@ -65,14 +65,13 @@ public class G8 extends JsonPlaceHolderBaseUrl {
         response.prettyPrint();
 
         DenemeJsonPlaceHolderTestData deneme = new DenemeJsonPlaceHolderTestData();
-        Map<String, Object> expectedDataMap = deneme.expectedDataWithAllKeys(1, 2, "quis ut nam facilis et officia qui", false);
+        Map<String, Object> expectedDataMap = deneme.expectedDataWithAllKeys(1, "quis ut nam facilis et officia qui", false);
         expectedDataMap.put("Via", "1.1 vegur");
         expectedDataMap.put("Server", "cloudflare");
         expectedDataMap.put("StatusCode", 200);
 
 
         assertEquals(expectedDataMap.get("userId"),actualDataMap.get("userId"));
-        assertEquals(expectedDataMap.get("id"),actualDataMap.get("id"));
         assertEquals(expectedDataMap.get("title"),actualDataMap.get("title"));
         assertEquals(expectedDataMap.get("completed"),actualDataMap.get("completed"));
         assertEquals(expectedDataMap.get("StatusCode"),response.getStatusCode());

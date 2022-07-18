@@ -6,10 +6,9 @@ import java.util.Map;
 public class DenemeJsonPlaceHolderTestData {
 
 
-    public Map<String, Object> expectedDataWithAllKeys(Integer userId, Integer id, String title, Boolean completed) {
+    public Map<String, Object> expectedDataWithAllKeys(Integer userId, String title, Boolean completed) {
         Map<String, Object> expectedData = new HashMap<String, Object>();
         expectedData.put("userId", userId);
-        expectedData.put("id", id);
         expectedData.put("title", title);
         expectedData.put("completed", completed);
 
@@ -25,19 +24,20 @@ public class DenemeJsonPlaceHolderTestData {
         return expectedDataMissingKeysMap;
     }
 
+    public Map<String, Object> expectedDataWithMissingKeys2(Integer userId, String title, Boolean completed){
+        Map<String, Object> expectedDataMissingKeysMap = new HashMap<String, Object>();
 
+        if (userId != null){
+            expectedDataMissingKeysMap.put("userId",userId);
+        }
+        if (title != null){
+            expectedDataMissingKeysMap.put("title",title);
+        }
+        if (completed != null){
+            expectedDataMissingKeysMap.put("completed",completed);
+        }
 
-    //   {
-    //    "firstname": "Luca",
-    //    "lastname": "Wilson",
-    //    "totalprice": 792,
-    //    "depositpaid": false,
-    //    "bookingdates": {
-    //        "checkin": "2022-07-14",
-    //        "checkout": "2022-07-21"
-    //    },
-    //    "additionalneeds": "Dinner"
-    //}
-
+        return expectedDataMissingKeysMap;
+    }
 
 }
