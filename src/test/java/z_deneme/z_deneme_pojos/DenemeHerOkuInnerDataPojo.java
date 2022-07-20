@@ -1,0 +1,42 @@
+package z_deneme.z_deneme_pojos;
+
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
+public class DenemeHerOkuInnerDataPojo {
+
+    private String checkin;
+    private String checkout;
+
+    public DenemeHerOkuInnerDataPojo(String checkin, String checkout) {
+        this.checkin = checkin;
+        this.checkout = checkout;
+    }
+
+    public DenemeHerOkuInnerDataPojo() {
+    }
+
+    public String getCheckin() {
+        return checkin;
+    }
+
+    public void setCheckin(String checkin) {
+        this.checkin = checkin;
+    }
+
+    public String getCheckout() {
+        return checkout;
+    }
+
+    public void setCheckout(String checkout) {
+        this.checkout = checkout;
+    }
+
+    @Override
+    public String toString() {
+        return "HerOkuBookingDatesPojo{" +
+                "checkin='" + checkin + '\'' +
+                ", checkout='" + checkout + '\'' +
+                '}';
+    }
+}
