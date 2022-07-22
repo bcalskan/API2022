@@ -9,7 +9,7 @@ import utils.JsonUtil;
 
 import static io.restassured.RestAssured.*;
 
-public class Get2ObjectMapper extends HerOkuAppBaseUrl {
+public class GetObjectMapper15 extends HerOkuAppBaseUrl {
      /*
         Given
                https://restful-booker.herokuapp.com/booking/22

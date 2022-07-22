@@ -9,7 +9,7 @@ import z_deneme.z_deneme_pojos.DenemeGoRestOuterDataPojo;
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
-public class GetPojo2 extends GoRestBaseUrl {
+public class GetPojo13 extends GoRestBaseUrl {
     /*
         Given
 

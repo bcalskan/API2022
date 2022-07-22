@@ -9,7 +9,7 @@ import z_deneme.z_deneme_pojos.DenemeHerOkuOuterDataPojo;
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
-public class GetPojo1 extends HerOkuAppBaseUrl {
+public class GetPojo12 extends HerOkuAppBaseUrl {
      /*
     Given
             https://restful-booker.herokuapp.com/booking/185

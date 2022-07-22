@@ -1,6 +1,9 @@
 package pojos;
 
-public class ResponseBodyPojo {
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class DummyApiResponseBodyPojo {
 
     private String status;
     private DummyApiDataPojo data;
@@ -8,18 +11,16 @@ public class ResponseBodyPojo {
 
     /**
      * No args constructor for use in serialization
-     *
      */
-    public ResponseBodyPojo() {
+    public DummyApiResponseBodyPojo() {
     }
 
     /**
-     *
      * @param data
      * @param message
      * @param status
      */
-    public ResponseBodyPojo(String status, DummyApiDataPojo data, String message) {
+    public DummyApiResponseBodyPojo(String status, DummyApiDataPojo data, String message) {
         super();
         this.status = status;
         this.data = data;

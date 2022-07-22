@@ -12,7 +12,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
-public class Get1ObjectMapper extends JsonPlaceHolderBaseUrl {
+public class GetObjectMapper14 extends JsonPlaceHolderBaseUrl {
     /*
         Given
            https://jsonplaceholder.typicode.com/todos/198
