@@ -12,7 +12,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
-public class Put_01 extends JsonPlaceHolderBaseUrl {
+public class Put01 extends JsonPlaceHolderBaseUrl {
     /*
         Given
 	        1) https://jsonplaceholder.typicode.com/todos/198
