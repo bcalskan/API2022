@@ -1,4 +1,4 @@
-package z_deneme.z_deneme_get_pojo;
+package z_deneme.z_deneme_get_request;
 
 import base_Urls.GoRestBaseUrl;
 import io.restassured.response.Response;

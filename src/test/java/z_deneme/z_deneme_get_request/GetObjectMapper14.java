@@ -1,4 +1,4 @@
-package z_deneme.z_deneme_get_object_mapper;
+package z_deneme.z_deneme_get_request;
 
 import base_Urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
